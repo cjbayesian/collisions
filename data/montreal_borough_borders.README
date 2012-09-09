@@ -1,0 +1,9 @@
+Aggregation of tallyzoo-data-2 into Montreal borough borders
+
+Dataset derived by aggregating the features of tallyzoo-data-2 into Montreal borough borders
+
+Attributes:
+name: name - 
+count: count of tallyzoo-data-2 - 
+
+exported on Thu Apr 12 23:37:14 -0400 2012
