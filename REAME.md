@@ -1,0 +1,17 @@
+Bike Accidents Map Visualization
+================================
+
+A time series visualization of cycling accidents in Montreal from 2006-2010.
+
+Author: Corey Chivers
+
+Contact: corey.chivers@mail.mcgill.ca
+
+Date: 2012-09-09
+
+Video:
+[BayesianBiologist](http://bayesianbiologist.com/)
+
+Data from:
+[Roberto Rocha at The Gazette](http://www.econ.umn.edu/~holmes/data/WalMart/index.html)
+
