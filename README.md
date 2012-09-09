@@ -11,11 +11,11 @@ Date: 2012-09-09
 
 To run:
 
-	R R CMD BATCH R/plot_accidents.R
+	R CMD BATCH R/plot_accidents.R
 
 Video:
 [BayesianBiologist](http://bayesianbiologist.com/)
 
 Data from:
-[Roberto Rocha at The Gazette](http://www.econ.umn.edu/~holmes/data/WalMart/index.html)
+[Roberto Rocha at The Gazette](http://blogs.montrealgazette.com/category/montreal/data-points/)
 
