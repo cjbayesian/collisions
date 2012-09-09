@@ -9,6 +9,10 @@ Contact: corey.chivers@mail.mcgill.ca
 
 Date: 2012-09-09
 
+To run:
+
+	R R CMD BATCH R/plot_accidents.R
+
 Video:
 [BayesianBiologist](http://bayesianbiologist.com/)
 
