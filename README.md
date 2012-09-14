@@ -14,7 +14,7 @@ To run:
 	R CMD BATCH R/plot_accidents.R
 
 Video:
-[BayesianBiologist](http://bayesianbiologist.com/)
+[BayesianBiologist](http://bayesianbiologist.com/2012/09/14/mapping-bike-accidents-in-r/)
 
 Data from:
 [Roberto Rocha at The Gazette](http://blogs.montrealgazette.com/category/montreal/data-points/)
