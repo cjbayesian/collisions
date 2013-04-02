@@ -2,7 +2,7 @@
 ## Map Visualization of Montreal Cycling Collisions 2006-2010
 ## Corey Chivers, corey.chivers@mail.mcgill.ca
 ## Made at HackTaVille in Montreal. September 2012
-##
+## Updated for Montreal R Users Group, April 2013
 #############################################################
 library(lubridate)
 library(maptools)
@@ -20,27 +20,34 @@ startday <-(ymd("2006-01-01",tz='EST'))
 all_days <- startday + c(0:(365*5)) * days(1)
 
 n_points<-length(d[,1])
-time_since<-array(dim=c(length(all_days),n_points))
 
-##Pre-process timing matrix
-trail_length<-30 #points persist for about a month
-incident_rate<-numeric(length(all_days))
-for(da in 1:length(all_days))
+##Pre-process timing matrix##
+##This calculates the incident rate
+##Using a 30day moving window
+if(!file.exists('data/time_mat.Rdata'))
 {
-   print(all_days[da])
+   time_since<-array(dim=c(length(all_days),n_points))
+   trail_length<-30 #points persist for about a month
+   incident_rate<-numeric(length(all_days))
+   for(da in 1:length(all_days))
+   {
+      print(all_days[da])
 
-   time_since[da,]<-sapply(1:n_points,function(i){
-      as.numeric(all_days[da]-d$date[i])})
-   
-   time_since[da,time_since[da,]>trail_length]<-trail_length
-   time_since[da,time_since[da,]<0]<-trail_length
-   incident_rate[da]<-sum(time_since[da,]!=trail_length)
+      time_since[da,]<-sapply(1:n_points,function(i){
+         as.numeric(all_days[da]-d$date[i])})
+      
+      time_since[da,time_since[da,]>trail_length]<-trail_length
+      time_since[da,time_since[da,]<0]<-trail_length
+      incident_rate[da]<-sum(time_since[da,]!=trail_length)
+   }
+   save('data/time_mat.Rdata',trail_length,incident_rate,time_since)
+}else{
+   load('data/time_mat.Rdata')
 }
-   
 
 
 
-## Plots
+## Plots1
 for(da in 1:length(all_days))
 {
    png(paste('plots/',all_days[da],'.png',sep=''),
