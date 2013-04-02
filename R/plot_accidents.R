@@ -40,7 +40,7 @@ if(!file.exists('data/time_mat.Rdata'))
       time_since[da,time_since[da,]<0]<-trail_length
       incident_rate[da]<-sum(time_since[da,]!=trail_length)
    }
-   save('data/time_mat.Rdata',trail_length,incident_rate,time_since)
+   save(trail_length,incident_rate,time_since,file='data/time_mat.Rdata')
 }else{
    load('data/time_mat.Rdata')
 }
